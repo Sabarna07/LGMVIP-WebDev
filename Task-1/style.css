@@ -57,6 +57,18 @@ section{
 }
 
 /* NAV MENU START */
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    transition: 00.3s ease-out;
+}
+
+.header__sticky{
+    background-color: var(--light-color);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
 nav{
     max-width: 1024px;
     margin: auto;
@@ -66,8 +78,8 @@ nav{
 }
 
 .logo{
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 80px;
     padding: 5px 0;
 }
 
@@ -82,7 +94,7 @@ nav{
     margin-right: 20px;
 }
 
-.nav__menu a{
+.nav__menu a, .mobile__nav__menu li a{
     color: var(--primary-color);
     padding: 10px;
     margin: 0 5px;
@@ -98,18 +110,53 @@ nav{
     background-color: #fff;
 }
 
-.mobile__menu{
-    width: 50px;
-    height: 50px;
-    position: relative;
+.mobile__nav__menu{
+    margin: 0;
+    padding: 0;
+    height: 88vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 5;
+    background-color: var(--light-color);
+    position: absolute;
+    left: 100%;
+    transition: 0.3s ease-in-out;
+}
+.active{
+    width: 50%;
+    left: 50%;
+    display: flex;
+    transition: 0.3s ease-in-out;
+    border-radius: 100px 0 0 0;
+}
+.mobile__nav__menu li a:hover{
+    background-color: var(--dark-bg-color);
 }
 
+.hamburger-icon{
+    margin: 5px 30px 5px 5px;
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--primary-color);
+    display: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.icon__active{
+    display: block;
+}
 
 /* NAV MENU END */
 
 /* BANNER CONTENT */
 .banner{
-    padding:74px 0;
+    padding:calc(36vh - 80px) 0 74px 0;
 }
 
 .banner__row{
@@ -523,10 +570,13 @@ footer{
     filter: invert(1);
 }
 
+
+
 /* MEDIA QUERY */
 
 @media screen and (max-width:768px){
     nav{
+        flex-direction: row-reverse;
         justify-content: space-between;
         padding: 0 20px;
     }
@@ -538,8 +588,16 @@ footer{
         display: none;
     }
 
-    #mobile__menu:checked + label{
+    .hamburger-icon{
         display: block;
+    }
+
+    .mobile__nav{
+        display: block;
+    }
+
+    #menu-toggle:checked + .mobile__nav__menu {
+        display: block ;
     }
 
     .banner__row{

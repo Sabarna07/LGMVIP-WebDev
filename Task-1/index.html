@@ -17,26 +17,42 @@
         <div class="bg__img">
 
             <!-- HEADER -->
-            <header>
+            <header id="header" >
                 <nav>
+                    <label class="hamburger-icon" onclick="handleMobileMenu()" aria-label="Open navigation menu"
+                        for="menu-toggle">&#9776;</label>
+
+                    <input type="checkbox" id="menu-toggle" />
                     <ul class="nav__menu">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                     </ul>
                     <div class="logo">
-                        <img src="./images/logo__1.png" alt="">
+                        <a href="#home">
+                            <img src="./images/logo__1.png" alt="">
+                        </a>
                     </div>
                     <ul class="nav__menu">
                         <li><a href="#service">Pricing</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
+
                 </nav>
+
+                <!-- Mobile menu -->
+                <ul class="mobile__nav__menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#service">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
             </header>
 
             <!-- HEADER -->
 
             <!-- BANNER CONTENT -->
-            <div class="banner">
+            <div class="banner" id="home">
                 <div class="container">
                     <div class="banner__row">
                         <div class="banner__column">
@@ -45,7 +61,8 @@
                                 <h1>Make Your Business Grow Online</h1>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, fugiat animi. Autem
                                     modi iusto cupiditate</p>
-                                <button class="banner__button"><a href="#service" style="color: #fff;"> GET IT NOW</a></button>
+                                <button class="banner__button"><a href="#service" style="color: #fff;"> GET IT
+                                        NOW</a></button>
                             </div>
                         </div>
                         <div class="banner__column">
@@ -111,25 +128,27 @@
                     <div class="banner__column">
                         <div class="banner__text">
                             <p class="info__text" style='color:#6C63FF'>Services</p>
-                            <h1 >Connect to Customers</h1>
+                            <h1>Connect to Customers</h1>
                             <ul class="info__list">
                                 <li>&#9733; Social Media Strategy</li>
                                 <li>&#9733; Engine Optimisation</li>
                                 <li>&#9733; Online Media Management</li>
                             </ul>
-                            <button class="banner__button" style="background-color: #1B0045;color: #fff;">Learn More</button>
+                            <button class="banner__button" style="background-color: #1B0045;color: #fff;">Learn
+                                More</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-          <!-- Subscribe -->
+        <!-- Subscribe -->
 
-          <section class="subscribe" style="background-color: #1B0045;">
+        <section class="subscribe" style="background-color: #1B0045;">
             <div class="subs__container">
                 <div class="subs__heading" style="font-size: 35px;">Start Your Business Online</div>
-                <div class="subs__subtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio facilis atque consequatur!</div>
+                <div class="subs__subtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio facilis atque
+                    consequatur!</div>
                 <form class="subs__form">
                     <button class="subs__button">Get Started</button>
                 </form>
@@ -202,14 +221,14 @@
         <!-- PRICING -->
 
 
-         <!-- Subscribe -->
+        <!-- Subscribe -->
 
-         <section class="subscribe">
+        <section class="subscribe">
             <div class="subs__container">
                 <div class="subs__heading">Join our exclusive membership to receive latest news on time</div>
                 <div class="subs__subtext">You can unsubscribe at any time</div>
                 <form class="subs__form">
-                    <input type="text" placeholder="Subscribe">
+                    <input type="email" placeholder="Subscribe">
                     <button class="subs__button">Subscribe</button>
                 </form>
 
@@ -236,7 +255,7 @@
                                 <input type="text" placeholder="Email"></input>
                             </div>
                             <div class="input__field">
-                                <textarea type="text" placeholder="Message"></textarea>
+                                <textarea type="text" placeholder="Message" rows="5"></textarea>
                             </div>
                             <button class="contact__button">Send</button>
                         </form>
@@ -254,7 +273,9 @@
                     <!-- Business conatact info -->
                     <div class="footer__column">
                         <div class="logo">
+                            <a href="#home">
                             <img src="./images/logo__1.png" alt="" />
+                        </a>
                         </div>
                         <div class="business__contact">
                             <div class="email">
@@ -288,9 +309,9 @@
         </footer>
 
         <!-- footer -->
-
-
     </main>
+
+    <script src="./script.js"></script>
 
 </body>
 
